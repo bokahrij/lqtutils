@@ -33,6 +33,7 @@
 #include <QMutableSetIterator>
 #include <QThreadPool>
 #include <QTemporaryFile>
+#include <QElapsedTimer>
 
 #include "../lqtutils_prop.h"
 #include "../lqtutils_string.h"
