@@ -12,6 +12,10 @@ find_package(Qt${QT_VERSION_MAJOR} OPTIONAL_COMPONENTS DBus)
 if (APPLE)
     find_library(USER_NOTIFICATIONS_FRAMEWORK UserNotifications)
 endif()
+if (ANDROID)
+    find_package(QT NAMES Qt6 REQUIRED COMPONENTS CorePrivate)
+    find_package(Qt${QT_VERSION_MAJOR} OPTIONAL_COMPONENTS CorePrivate)
+endif()
 
 qt_add_library(lqtutils STATIC
     ${CMAKE_CURRENT_LIST_DIR}/lqtutils_ui.cpp ${CMAKE_CURRENT_LIST_DIR}/lqtutils_ui.h
