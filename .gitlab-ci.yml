@@ -202,12 +202,12 @@ Test_qt610:
 Test_qt610_android:
   stage: test_qt610_android
   image:
-    name: "carlonluca/qt-dev:6.10.0"
+    name: "carlonluca/qt-dev:6.10.1"
     entrypoint: [""]
   script:
     - mkdir build
     - cd build
-    - /opt/qt/6.10.0/android_arm64_v8a/bin/qt-cmake \
+    - /opt/qt/6.10.1/android_arm64_v8a/bin/qt-cmake \
       -DCMAKE_BUILD_TYPE=Release \
       -DQT_ANDROID_BUILD_ALL_ABIS:BOOL=ON \
       -S ../qt6;
