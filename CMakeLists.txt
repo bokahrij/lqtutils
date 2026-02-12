@@ -3,10 +3,6 @@ set(CMAKE_AUTOMOC ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Gui Qml Quick)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Gui Qml Quick)
-if (Qt6_FOUND)
-    # Qt 6.7+: StateMachine merged into QtCore
-    find_package(Qt6 REQUIRED COMPONENTS Core)
-endif()
 
 find_package(QT NAMES Qt6 Qt5 OPTIONAL_COMPONENTS DBus)
 find_package(Qt${QT_VERSION_MAJOR} OPTIONAL_COMPONENTS DBus)
@@ -78,15 +74,16 @@ target_link_libraries(lqtutils PRIVATE
     Qt${QT_VERSION_MAJOR}::Qml
     Qt${QT_VERSION_MAJOR}::Quick
 )
+
 if (Qt6DBus_FOUND)
     target_link_libraries(lqtutils PRIVATE Qt${QT_VERSION_MAJOR}::DBus)
 endif()
-if (Qt6_FOUND)
-    target_link_libraries(lqtutils PRIVATE Qt6::StateMachine)
-endif()
+
 if (APPLE)
     target_link_libraries(lqtutils PRIVATE ${USER_NOTIFICATIONS_FRAMEWORK})
 endif()
+
 if (ANDROID)
     target_link_libraries(lqtutils PRIVATE Qt${QT_VERSION_MAJOR}::CorePrivate)
 endif()
+
