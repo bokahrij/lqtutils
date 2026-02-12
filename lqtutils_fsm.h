@@ -25,7 +25,7 @@
 #ifndef LQTUTILS_FSM_H
 #define LQTUTILS_FSM_H
 
-#include <QState>
+#include <QtCore/QState>
 #include <QDebug>
 #include <QString>
 
