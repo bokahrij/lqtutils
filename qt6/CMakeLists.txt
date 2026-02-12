@@ -45,7 +45,6 @@ add_compile_definitions(LQTUTILS_OMIT_ARG_FROM_SIGNAL)
 
 set(ENABLE_FONT_AWESOME true)
 include_directories(../)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/.. subproject/lqtutils)
 
 add_executable(LQtUtilsTest ../lqtutils/tst_lqtutils.cpp)
 add_test(NAME LQtUtilsTest COMMAND LQtUtilsTest)
